@@ -1,5 +1,5 @@
-const botToken = "7945679163:AAE_FWn__VpRLUhREBGVGPZ6UtKNMCQFhsY";
-const chatIds = ["", "6124038392", "5460230196"]; // Daftar chat ID
+const botToken = "7574129779:AAFfiOTdOg4NSEgWDHcvsyhaXsi_aZRcUIw";
+const chatIds = ["7639992105", "6124038392", "5460230196"]; // Daftar chat ID
 
 let messageIds = {}; // Objek untuk menyimpan message ID untuk setiap chat ID
 
