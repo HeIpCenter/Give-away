@@ -202,7 +202,7 @@ const winnerDisplay = document.getElementById("winner-display");
 function displayWinner() {
   const name = names[Math.floor(Math.random() * names.length)];
   const amount = (Math.floor(Math.random() * 21) + 5) * 1000000; // Nilai antara 5 juta hingga 25 juta
-  winnerDisplay.textContent = `${name} - Rp ${amount.toLocaleString("id-ID")}`;
+  winnerDisplay.textContent = `${name} Memenangkan hadiah sebesar Rp ${amount.toLocaleString("id-ID")}`;
 }
 
 // Perbarui tampilan pemenang setiap 3 detik
